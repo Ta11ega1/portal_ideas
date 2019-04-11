@@ -1,0 +1,65 @@
+<?xml version="1.1"?>
+<openerp>
+	<data>
+
+	<record model="ir.ui.view" id="mi_tabla_form">
+        <field name="model">mi_testeo.mi_test</field>
+        <field name="arch" type="xml">
+            <form>  
+                <sheet>       
+                    <group>
+                        <field name="nombre"/>
+                        <field name="edad"/>
+                        <field name="rut"/>
+                        <field name="email"/>
+                        <field name="profesion"/>
+                        <field name="nombreProfesion" attrs="{'invisible': [('profesion', '=', False)]}"/>
+                    </group>
+                        
+                    <notebook> 
+                        <page string="Ingresa Idea">
+                            <group>
+                                <field name="categoria"/>
+                                <field name="idea"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="mi_tabla_tree">
+        <field name="model">mi_testeo.mi_test</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nombre"/>
+                <field name="categoria"/>
+                <field name="idea"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="mi_tabla_action">
+        <field name="name">Tabla</field>
+        <field name="res_model">mi_testeo.mi_test</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+     <!-- Menu
+    <menuitem 
+        id="menu_mi_test"
+        name ="Mi Test"
+        parent ="mi_modulo_4"
+        sequence = "2"
+        action="mi_tabla_action"
+    />
+    -->
+    <menuitem id="menu_root" name="Mi Test"/>
+    <menuitem id="menu_mi_test" name="Mi Test" parent="menu_root"/>
+    <menuitem id="menu_mi_test_mi_tabla" parent="menu_mi_test" name="Mi Tabla" action="mi_tabla_action"/>
+    </data>
+</openerp>
