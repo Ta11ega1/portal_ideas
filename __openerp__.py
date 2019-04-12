@@ -5,7 +5,7 @@
 	"author": "nacho",
 	"category": "xx",
 	"summary": "Para probar ideas",
-	"depends": ['base'],
+	"depends": ['base','mi_modulo_4'],
 	"data": [
 		"mi_testeo_view.xml",
 	],
